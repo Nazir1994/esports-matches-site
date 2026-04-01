@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h2 {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #93c5fd;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+}
+
+.match-card {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 20px auto;
+    max-width: 700px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.match-card h3 {
+    margin: 0 0 10px 0;
+    color: #f8fafc;
+}
+
+.match-card p {
+    margin: 6px 0;
+    text-align: left;
+}
+
+.match-card a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+.match-card a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.status.not_started {
+    background: #1e293b;
+    color: #93c5fd;
+}
+
+.status.running {
+    background: #065f46;
+    color: #34d399;
+}
+
+.status.finished {
+    background: #3f3f46;
+    color: #a1a1aa;
+}
+
+
+.generate-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    background: #1d4ed8;
+}
+
+
+.logo {
+    font-size: 26px;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #93c5fd;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+}

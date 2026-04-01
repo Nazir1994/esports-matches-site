@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Сайт{% endblock %}</title>
+    <meta name="description" content="{{ meta_description or 'Киберспортивные матчи за вчера, сегодня и завтра.' }}">
+
+    <script type="application/ld+json">
+    {{ schema_org | tojson }}
+    </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}">
+</head>
+<body>
+
+<header style="text-align: center; margin-bottom: 30px;">
+    <h2 class="logo">🎮 Esports Matches</h2>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/matches/yesterday">Вчера</a>
+        <a href="/matches/today">Сегодня</a>
+        <a href="/matches/tomorrow">Завтра</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+</body>
+</html>

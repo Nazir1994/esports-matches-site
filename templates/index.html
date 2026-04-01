@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+
+<h1>Киберспортивные матчи</h1>
+<p>Выберите нужный день, чтобы посмотреть список матчей.</p>
+
+<form action="/generate" method="post" style="text-align: center; margin-bottom: 30px;">
+    <button type="submit" class="generate-btn">Обновить матчи</button>
+</form>
+
+{% if last_updated %}
+    <p><strong>Последнее обновление:</strong> {{ last_updated }}</p>
+{% endif %}
+
+<div class="match-card">
+    <h3><a href="/matches/yesterday">Матчи за вчера</a></h3>
+    <p>Результаты и завершённые встречи за прошлый день.</p>
+</div>
+
+<div class="match-card">
+    <h3><a href="/matches/today">Матчи за сегодня</a></h3>
+    <p>Актуальные матчи и встречи текущего дня.</p>
+</div>
+
+<div class="match-card">
+    <h3><a href="/matches/tomorrow">Матчи за завтра</a></h3>
+    <p>Предстоящие киберспортивные матчи на следующий день.</p>
+</div>
+
+{% endblock %}
