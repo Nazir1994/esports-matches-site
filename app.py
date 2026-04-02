@@ -2,7 +2,8 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, redirect, url_for
 from fetcher import get_today_matches, get_yesterday_matches, get_tomorrow_matches
-from datetime import datetime
+from datetime import datetime, timedelta
+
 
 load_dotenv()
 
@@ -74,7 +75,7 @@ def generate():
     get_today_matches()
     get_tomorrow_matches()
 
-    last_updated = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+    last_updated = (datetime.utcnow() + timedelta(hours=4)).strftime("%d.%m.%Y %H:%M:%S")
 
     return redirect(url_for("home"))
 
