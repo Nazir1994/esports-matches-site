@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Сайт{% endblock %}</title>
     <meta name="description" content="{{ meta_description or 'Киберспортивные матчи за вчера, сегодня и завтра.' }}">
+    <meta http-equiv="refresh" content="180">
 
     <script type="application/ld+json">
     {{ schema_org | tojson }}
     </script>
+
+
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}">
