@@ -69,10 +69,12 @@ def get_matches_for_day(day_offset):
         "page[size]": 50
     }
 
-    response = requests.get(url, headers=headers, params=params, timeout=30)
-    response.raise_for_status()
-
-    data = response.json()
+    try:
+        response = requests.get(url, headers=headers, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+    except requests.RequestException:
+        return []
 
     allowed_games = {
         "Counter-Strike",

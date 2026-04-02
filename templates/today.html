@@ -7,21 +7,28 @@
 <h1>{{ title }} — киберспортивные матчи</h1>
 <p>Ниже список матчей:</p>
 
-{% for match in matches %}
+{% if matches %}
+    {% for match in matches %}
+        <div class="match-card">
+            <h3>{{ match.team_1 }} vs {{ match.team_2 }}</h3>
+
+            <p><strong>Игра:</strong> {{ match.game }}</p>
+            <p><strong>Лига:</strong> {{ match.league }}</p>
+            <p><strong>Время:</strong> {{ match.time }}</p>
+
+            <p>
+                <strong>Статус:</strong>
+                <span class="status {{ match.status }}">
+                    {{ match.status }}
+                </span>
+            </p>
+        </div>
+    {% endfor %}
+{% else %}
     <div class="match-card">
-        <h3>{{ match.team_1 }} vs {{ match.team_2 }}</h3>
-
-        <p><strong>Игра:</strong> {{ match.game }}</p>
-        <p><strong>Лига:</strong> {{ match.league }}</p>
-        <p><strong>Время:</strong> {{ match.time }}</p>
-
-        <p>
-            <strong>Статус:</strong>
-            <span class="status {{ match.status }}">
-                {{ match.status }}
-            </span>
-        </p>
+        <h3>Матчи не найдены</h3>
+        <p>Данные временно недоступны или на выбранный день нет матчей.</p>
     </div>
-{% endfor %}
+{% endif %}
 
 {% endblock %}
